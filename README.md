@@ -22,10 +22,28 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## 요약
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+NestJS 프레임워크 기반의 JWT 로그인 구현
 
+## 세부 기능
+
+ - Register 
+   (1) ID, PWD, EMAIL
+   (2) 성공 : DB 저장
+   (3) 실패 
+  
+ - Login
+   (1) 성공 : JWT 발행
+   (2) 실패 
+  
+ - Logout
+ 
+ - Profile 
+   (1) JWT
+   (2) 성공 : 저장된 정보 응답(이메일)
+   (3) 실패 : 에러 JWT 에러
+ 
 ## Installation
 
 ```bash
