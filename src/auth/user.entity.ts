@@ -1,7 +1,11 @@
-import { BaseEntity, Column, PrimaryGeneratedColumn } from 'typeorm'
+import { BaseEntity, Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
+@Entity()
 export class User extends BaseEntity {
     @PrimaryGeneratedColumn()
+    serial: number;
+
+    @Column()
     id: string;
 
     @Column()
