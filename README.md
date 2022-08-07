@@ -26,6 +26,10 @@
 
 NestJS 프레임워크 기반의 JWT 로그인 구현
 
+## JWT 로그인 흐름도
+
+https://drive.google.com/file/d/1HI7_GBBO91vWaafWzsKr-EAf40NckTJk/view?usp=sharing
+
 ## 세부 기능
 
  ### Register (/signup)
