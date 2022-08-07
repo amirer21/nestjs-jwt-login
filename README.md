@@ -44,6 +44,12 @@ NestJS 프레임워크 기반의 JWT 로그인 구현
    (2) 성공 : 저장된 정보 응답(이메일)
    (3) 실패 : 에러 JWT 에러
  
+ ## 개발환경 DB
+
+ - DB : PostgreSQL
+ - NodeJS 라이브러리 : @nestjs/jwt, @nestjs/passport, passport, passport-jwt, pg, typeorm, bcryptjs
+   
+ 
 ## Installation
 
 ```bash
