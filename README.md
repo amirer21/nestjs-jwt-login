@@ -28,18 +28,18 @@ NestJS 프레임워크 기반의 JWT 로그인 구현
 
 ## 세부 기능
 
- ### Register 
+ ### Register (/signup)
    - ID, PASSWORD, EMAIL
    - 성공 : DB 저장
    - 실패 : 저장 x, 에러코드 응답(유효성 체크, 서버 에러)
   
- ### Login
+ ### Login (/signin)
    - 성공 : JWT 발행
    - 실패 : 에러코드 응답(토큰 유효성 체크, DB값 없음, 서버 에러)
   
  ### Logout
  
- ### Profile 
+ ### Profile (/getUser)
    - JWT
    - 성공 : 저장된 정보 응답(아이디, 비밀번호, 이메일)
    - 실패 : 에러코드 응답(토큰 유효성 체크, DB값 없음, 서버 에러)
