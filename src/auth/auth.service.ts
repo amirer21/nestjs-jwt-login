@@ -5,6 +5,7 @@ import { User } from './user.entity';
 import { UserRepository } from './user.repository';
 import * as bcrypt from 'bcryptjs';
 import { JwtService } from '@nestjs/jwt';
+import { DefaultResponseDto } from './dto/DefaultResponse.dto';
 
 @Injectable()
 export class AuthService {
@@ -15,8 +16,17 @@ export class AuthService {
         private jwtService: JwtService //module 에 등록한 jwt를 서비스로 가져와서 사용
     ){}   
 
-    async signUp(authCredentialsDto: AuthCredentialsDto) : Promise<void>{        
-        return this.userRepository.createUser(authCredentialsDto);
+    async signUp(authCredentialsDto: AuthCredentialsDto) : Promise<DefaultResponseDto>{  
+        const ret = new DefaultResponseDto();
+        try {
+            this.userRepository.createUser(authCredentialsDto);
+            ret.returnCode = 0;
+            ret.returnMsg = "sign up success"
+            return ret;
+        } catch (error) {
+            return error;
+        }      
+        //return this.userRepository.createUser(authCredentialsDto);
     }
 
     async signIn(authCredentialsDto: AuthCredentialsDto): Promise<{accessToken: string}> {
@@ -27,8 +37,7 @@ export class AuthService {
         if(user && (await bcrypt.compare(password, user.password))) {            
             // 유저 토큰 생성 ( Secret + Payload )
             const payload = { id };
-            const accessToken = await this.jwtService.sign(payload); //jwt의 sign 메서드
-
+            const accessToken = await this.jwtService.sign(payload); //jwt의 sign 메서드            
             return {accessToken}; //토큰 객체를 클라이언트에 응답
             //return 'login success';
         }  else {
