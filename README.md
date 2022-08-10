@@ -47,6 +47,11 @@ https://drive.google.com/file/d/1EpkwB7yAzkvA9eqBfCX7wLA9QJSy2vDe/view?usp=shari
    - JWT
    - 성공 : 저장된 정보 응답(아이디, 비밀번호, 이메일)
    - 실패 : 에러코드 응답(토큰 유효성 체크, DB값 없음, 서버 에러)
+   
+## 추가로 개발할 것
+
+ ### 로그인할때 토큰을 쿠키에 등록, 로그아웃할때 해당 쿠키를 삭제
+
  
  ## 개발환경 DB
 
